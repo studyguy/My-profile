@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react'
+=======
+import { useEffect } from 'react'
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Calendar, Wrench, Award, ChevronLeft, ChevronRight } from 'lucide-react'
@@ -9,19 +13,25 @@ import DetailImagePlaceholder from '../components/DetailImagePlaceholder'
 export default function ProjectDetail() {
   const { slug } = useParams()
   const navigate = useNavigate()
+<<<<<<< HEAD
   const [scrolled, setScrolled] = useState(false)
+=======
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
   const project = projects.find(p => p.slug === slug)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [slug])
 
+<<<<<<< HEAD
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+=======
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-zinc-950">
@@ -41,6 +51,7 @@ export default function ProjectDetail() {
   const Icon = project.icon
 
   return (
+<<<<<<< HEAD
     <div className="min-h-screen">
       {/* Top Bar */}
       <div
@@ -56,13 +67,26 @@ export default function ProjectDetail() {
             className={`flex items-center gap-2 transition-colors text-sm ${
               scrolled ? 'text-zinc-400 hover:text-zinc-100' : 'text-zinc-300 hover:text-zinc-100'
             }`}
+=======
+    <div className="min-h-screen bg-zinc-950">
+      {/* Top Bar */}
+      <div className="sticky top-0 z-40 glass-strong border-b border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+          <button
+            onClick={() => navigate('/')}
+            className="flex items-center gap-2 text-zinc-400 hover:text-zinc-100 transition-colors text-sm"
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
           >
             <ArrowLeft size={16} />
             返回首页
           </button>
+<<<<<<< HEAD
           <span className={`text-xs transition-colors duration-700 truncate max-w-[200px] ${
             scrolled ? 'text-zinc-600' : 'text-zinc-500'
           }`}>{project.title}</span>
+=======
+          <span className="text-xs text-zinc-600 truncate max-w-[200px]">{project.title}</span>
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
         </div>
       </div>
 
@@ -79,7 +103,11 @@ export default function ProjectDetail() {
             <span className="px-3 py-1 rounded-full bg-teal-400/10 text-teal-400 text-xs font-medium">
               {project.category}
             </span>
+<<<<<<< HEAD
             <div className="flex items-center gap-1.5 text-zinc-200 text-xs">
+=======
+            <div className="flex items-center gap-1.5 text-zinc-500 text-xs">
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
               <Calendar size={12} />
               {project.period}
             </div>
@@ -187,7 +215,11 @@ export default function ProjectDetail() {
               {project.achievements.map((ach, i) => (
                 <div key={i} className="glass rounded-xl p-5">
                   <p className="text-2xl font-bold text-zinc-100 mb-1">{ach.value}</p>
+<<<<<<< HEAD
                   <p className="text-xs text-zinc-300">{ach.label}</p>
+=======
+                  <p className="text-xs text-zinc-500">{ach.label}</p>
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
                 </div>
               ))}
             </div>
@@ -223,11 +255,19 @@ export default function ProjectDetail() {
           {prevProj ? (
             <Link
               to={`/project/${prevProj.slug}`}
+<<<<<<< HEAD
               className="flex items-center gap-2 text-sm text-zinc-400 hover:text-teal-400 transition-colors group"
             >
               <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
               <div className="text-left">
                 <span className="block text-xs text-zinc-500">{prevProj.category}</span>
+=======
+              className="flex items-center gap-2 text-sm text-zinc-500 hover:text-teal-400 transition-colors group"
+            >
+              <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+              <div className="text-left">
+                <span className="block text-xs text-zinc-600">{prevProj.category}</span>
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
                 <span>{prevProj.title}</span>
               </div>
             </Link>
@@ -236,7 +276,11 @@ export default function ProjectDetail() {
           {nextProj ? (
             <Link
               to={`/project/${nextProj.slug}`}
+<<<<<<< HEAD
               className="flex items-center gap-2 text-sm text-zinc-400 hover:text-teal-400 transition-colors group"
+=======
+              className="flex items-center gap-2 text-sm text-zinc-500 hover:text-teal-400 transition-colors group"
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
             >
               <div className="text-right">
                 <span className="block text-xs text-zinc-600">{nextProj.category}</span>

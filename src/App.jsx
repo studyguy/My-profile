@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 import { lazy, Suspense } from 'react'
+=======
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import ContactFooter from './components/ContactFooter'
+<<<<<<< HEAD
 
 const Aurora = lazy(() => import('./components/Aurora'))
 const ExperienceDetail = lazy(() => import('./pages/ExperienceDetail'))
@@ -15,10 +19,15 @@ function Loading() {
     </div>
   )
 }
+=======
+import ExperienceDetail from './pages/ExperienceDetail'
+import ProjectDetail from './pages/ProjectDetail'
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
 
 export default function App() {
   return (
     <div className="relative">
+<<<<<<< HEAD
       {/* Aurora Background — lazy loaded WebGL */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <Suspense fallback={null}>
@@ -31,6 +40,8 @@ export default function App() {
         </Suspense>
       </div>
 
+=======
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
       <Routes>
         <Route
           path="/"
@@ -42,6 +53,7 @@ export default function App() {
             </>
           }
         />
+<<<<<<< HEAD
         <Route
           path="/experience/:slug"
           element={
@@ -58,6 +70,10 @@ export default function App() {
             </Suspense>
           }
         />
+=======
+        <Route path="/experience/:slug" element={<ExperienceDetail />} />
+        <Route path="/project/:slug" element={<ProjectDetail />} />
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
       </Routes>
     </div>
   )

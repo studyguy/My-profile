@@ -1,6 +1,10 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+<<<<<<< HEAD
 import { ArrowDown } from 'lucide-react'
+=======
+import { ArrowDown, Mail } from 'lucide-react'
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
 import { personalInfo } from '../data/placeholder'
 import BlurText from './BlurText'
 
@@ -93,8 +97,14 @@ export default function Hero() {
         >
           <button
             onClick={scrollToContact}
+<<<<<<< HEAD
             className="group w-40 inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/10 text-zinc-300 font-semibold text-base hover:border-white/20 hover:text-zinc-100 transition-all duration-300"
           >
+=======
+            className="group relative w-40 inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-teal-400 text-zinc-950 font-semibold text-base hover:bg-teal-300 transition-all duration-300 hover:shadow-lg hover:shadow-teal-400/20"
+          >
+            <Mail size={18} />
+>>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
             联系我
           </button>
 
