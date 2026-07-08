@@ -2,25 +2,15 @@ import {
   Cpu, Eye, Glasses, Layers, Headphones,
   Smartphone, Warehouse, Wrench, Plane, Package,
   BarChart3, Brain, Globe, Palette, Smartphone as AppIcon, Zap,
-<<<<<<< HEAD
   Code, Camera, Gamepad2, Map, ShoppingBag, Users,
   GraduationCap, Music, MessageSquare, Bot, Monitor, Radio,
-=======
-  Code, Camera, Gamepad2, Map, ShoppingBag,
-  GraduationCap,
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
 } from 'lucide-react'
 
 // ============ 个人信息 ============
 export const personalInfo = {
   name: '杨镕键',
-<<<<<<< HEAD
   title: '智能硬件 x AI 产品经理',
   subtitle: '8年+跨端产品经验，深耕智能穿戴、AR 眼镜、AI Agent 及操作系统，擅长将前沿技术转化为可规模化的产品方案',
-=======
-  title: '智能硬件产品经理',
-  subtitle: '8年+智能硬件经验，主攻硬件、OS、APP、视觉算法，丰富多端产品设计、开发与落地经验',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
   email: 'master_yrj@163.com',
   phone: '15397581616',
   location: '中国 · 杭州',
@@ -34,17 +24,10 @@ export const personalInfo = {
 // ============ 导航链接 ============
 export const navLinks = [
   { id: 'hero', label: '首页' },
-<<<<<<< HEAD
   { id: 'about', label: '关于' },
   { id: 'experience', label: '经历' },
   { id: 'projects', label: '项目' },
   { id: 'skills', label: '技能' },
-=======
-  { id: 'experience', label: '经历' },
-  { id: 'projects', label: '项目' },
-  { id: 'skills', label: '技能' },
-  { id: 'education', label: '教育' },
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
   { id: 'contact', label: '联系' },
 ]
 
@@ -66,15 +49,9 @@ export const experiences = [
     company: '瞳宇科技（杭州）有限公司',
     companyShort: '追觅智能穿戴 BU',
     role: '产品一号位',
-<<<<<<< HEAD
     description: '作为产品一号位，主导智能穿戴全品类（智能戒指、骨传导耳机、智能眼镜、智能手环）的产品定义与商业闭环，连续多月全渠道营收超千万。',
     icon: Cpu,
     tags: ['智能穿戴', '商业闭环', '多品类统筹', '全渠道营销', 'AI 能力落地'],
-=======
-    description: '负责打造具备市场领先性的智能穿戴产品（智能戒指、骨传导耳机、智能眼镜、智能手环），并完成商业闭环。',
-    icon: Cpu,
-    tags: ['智能穿戴', '商业闭环', '硬件选型', 'APP 迭代', '全渠道营销'],
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     achievements: [
       { metric: '月营收', value: '超千万', label: '连续多月全渠道' },
       { metric: '锁单金额', value: '超千万', label: '骨传导耳机首发' },
@@ -84,11 +61,7 @@ export const experiences = [
       {
         type: 'overview',
         title: '工作概述',
-<<<<<<< HEAD
         content: '作为产品一号位，统筹智能戒指（震动款、ECG 款）、AI 骨传导耳机、智能眼镜、智能手环的产品定义与商业闭环，推动多品类营收连续多月破千万。',
-=======
-        content: '负责打造具备市场领先性的智能穿戴产品（智能戒指、骨传导耳机、智能眼镜、智能手环），并完成商业闭环。',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
       },
       {
         type: 'list',
@@ -108,15 +81,9 @@ export const experiences = [
     company: '杭州秋果计划科技有限公司',
     companyShort: '秋果计划',
     role: '产品经理',
-<<<<<<< HEAD
     description: '主导对标 Meta Orion 的 AI+AR 眼镜及 4 款交互配件（EMG 手环、智能戒指、智能表、Station），并设计全设备协同的 AR 操作系统。',
     icon: Glasses,
     tags: ['AR 眼镜', '操作系统', 'AI Agent', '芯片选型', 'SLAM/手势'],
-=======
-    description: '打造对标 Meta Orion 的 AI+AR 眼镜、配件（EMG手环、智能戒指、智能表、Station）及其操作系统。',
-    icon: Glasses,
-    tags: ['AR 眼镜', '操作系统设计', 'AI 交互', '硬件选型', 'SLAM & 手势'],
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     achievements: [
       { metric: '项目投入', value: '5kw 级', label: '对标 Meta Orion' },
       { metric: '产品矩阵', value: '5 款', label: '眼镜+4配件生态' },
@@ -126,11 +93,7 @@ export const experiences = [
       {
         type: 'overview',
         title: '工作概述',
-<<<<<<< HEAD
         content: '主导 5kw 级 AI+AR 眼镜项目，对标 Meta Orion，打造眼镜本体及 4 款交互配件（EMG 手环、智能戒指、智能表、Station），并设计全设备协同的 AR 操作系统。',
-=======
-        content: '打造对标 Meta Orion 的 AI+AR 眼镜、配件（EMG手环、智能戒指、智能表、Station）及其操作系统。',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
       },
       {
         type: 'list',
@@ -152,11 +115,7 @@ export const experiences = [
     company: '杭州易现先进科技有限公司',
     companyShort: '易现先进',
     role: '产品总监',
-<<<<<<< HEAD
     description: '主导 XR 全链路创作生态，打通高精地图采集 - 3D 场景编辑 - 内容分发 - AR 眼镜体验的完整闭环，服务超过 5 万创作者。',
-=======
-    description: '通过采集建图、3D编辑器、分发管理平台、眼镜的产品组合，打造 XR 从地图采集构建到内容制作再到分发的全链路创作生态。',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: Layers,
     tags: ['XR 生态', '3D 编辑器', 'AR 眼镜', '高精地图', '数字娱乐'],
     achievements: [
@@ -168,11 +127,7 @@ export const experiences = [
       {
         type: 'overview',
         title: '工作概述',
-<<<<<<< HEAD
         content: '主导 XR 全链路创作生态，整合自研 AR 眼镜与平台工具链，打通高精地图采集 - 3D 场景编辑 - 内容分发 - AR 眼镜体验闭环，累计服务 5 万+创作者，产出 17 万+有效内容，创作者单项目最高营收超百万。',
-=======
-        content: '通过采集建图、3D编辑器、分发管理平台、眼镜的产品组合，打造 XR 从地图采集构建到内容制作再到分发的全链路创作生态。',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
       },
       {
         type: 'list',
@@ -193,11 +148,7 @@ export const experiences = [
     company: '阿里巴巴',
     companyShort: '每平每屋设计家',
     role: '高级产品经理',
-<<<<<<< HEAD
     description: '聚焦家装设计工具操作复杂的行业痛点，为全屋定制领域打造高效、低门槛的 3D 板式定制解决方案。',
-=======
-    description: '负责围绕 3D 家装设计工具难用的痛点，在全屋定制领域设计易用的板式定制工具。',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: Warehouse,
     tags: ['3D 设计工具', '板式定制', '全屋定制', '3D 可视化'],
     achievements: [
@@ -208,11 +159,7 @@ export const experiences = [
       {
         type: 'overview',
         title: '工作概述',
-<<<<<<< HEAD
         content: '聚焦家装设计工具复杂度高、上手门槛大的行业痛点，为全屋定制领域打造高效低门槛的 3D 板式定制工具，涵盖橱柜、衣柜、造型柜等多品类，并提供 3D 全景预览与室内漫游等沉浸式体验。',
-=======
-        content: '负责围绕 3D 家装设计工具难用的痛点，在全屋定制领域设计易用的板式定制工具。',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
       },
       {
         type: 'list',
@@ -231,11 +178,7 @@ export const experiences = [
     company: '杭州奇志信息科技有限公司',
     companyShort: '奇志信息',
     role: '产品经理',
-<<<<<<< HEAD
     description: '从 0 到 1 搭建无人机土方工程全链路方案，以厘米级精度与自动化作业替代低效的人工测量模式。',
-=======
-    description: '从 0 搭建无人机土方工程作业解决方案，解决业内人工土方测量效率低、成本高、精度差的固有问题。',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: Plane,
     tags: ['无人机', '土方工程', '三维重建', '飞控程序', '0→1'],
     achievements: [
@@ -247,11 +190,7 @@ export const experiences = [
       {
         type: 'overview',
         title: '核心目标',
-<<<<<<< HEAD
         content: '从 0 到 1 搭建无人机土方工程全链路解决方案，以 DJI 精灵 4 + RTK 模块实现厘米级精度（误差 <=2cm），通过自动化飞控与视觉三维重建全面替代低效人工测量，交付周期缩短 40%。',
-=======
-        content: '从 0 搭建无人机土方工程作业解决方案，解决业内人工土方测量效率低、成本高、精度差的固有问题。',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
       },
       {
         type: 'list',
@@ -271,15 +210,9 @@ export const experiences = [
     company: '杭州涂鸦科技有限公司',
     companyShort: '涂鸦科技',
     role: '产品经理',
-<<<<<<< HEAD
     description: '搭建智能硬件 App OEM 数字化产线，以 SDK 开放平台 + OEM 流水线双方案赋能 5 万+智能家居客户。',
     icon: Package,
     tags: ['IoT 平台', '数字化产线', '跨端适配', '多语言国际化', '智能家居'],
-=======
-    description: '打造智能硬件 App OEM 业务体系，服务 5w+ 智能家居品牌商及工厂。',
-    icon: Package,
-    tags: ['IoT 平台', 'App OEM', '跨端覆盖', '多语言', '智能家居'],
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     achievements: [
       { metric: '服务客户', value: '5w+', label: '品牌商及工厂' },
       { metric: '启动速度', value: '快 20%', label: 'vs 同期米家 App' },
@@ -289,11 +222,7 @@ export const experiences = [
       {
         type: 'overview',
         title: '核心目标',
-<<<<<<< HEAD
         content: '搭建智能硬件 App OEM 数字化产线，针对不同客户能力输出 SDK 开放平台（高定制）+ OEM 流水线（零代码）双方案，通过模块化控制面板实现 App/Web/小程序三端覆盖，累计赋能 5 万+品牌商及工厂。',
-=======
-        content: '打造智能硬件 App OEM 业务体系，服务 5w+ 智能家居品牌商及工厂。',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
       },
       {
         type: 'list',
@@ -316,26 +245,15 @@ export const projects = [
     slug: 'dreame-ring',
     title: '追觅 AI 智能戒指（震动款）',
     category: '智能穿戴',
-<<<<<<< HEAD
     description: '主导全球首款量产震动 AI 智能戒指的产品设计，以精细化震动交互革新可穿戴设备的用户体验。',
     period: '2025.12 - 2026.01',
     role: '产品经理',
     gradient: 'from-teal-900 via-zinc-800 to-neutral-800',
-=======
-    description: '打造全球首款量产震动 AI 智能戒指，落地"无感佩戴，有感关怀"。',
-    period: '2025.12 - 2026.01',
-    role: '产品经理',
-    gradient: 'from-indigo-600 via-purple-600 to-pink-500',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: Eye,
     techStack: ['智能硬件', '震动交互', '健康 APP', '供应商管理', '全渠道营销'],
     achievements: [
       { metric: '产品定位', value: '全球首款', label: '量产震动 AI 戒指' },
-<<<<<<< HEAD
       { metric: '交互创新', value: '优先级分级', label: '精细化震动反馈体系' },
-=======
-      { metric: '交互设计', value: '优先级分级', label: '主被动震动反馈' },
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     ],
     detailContent: [
       {
@@ -359,17 +277,10 @@ export const projects = [
     slug: 'wigain-omnision',
     title: 'Wigain Omnision',
     category: 'AR 眼镜',
-<<<<<<< HEAD
     description: '主导国内首款碳化硅全彩光波导 AR 眼镜的产品定义与硬件选型，实现全场景 6DoF 精准定位。',
     period: '2024.10 - 2025.10',
     role: '硬件产品经理',
     gradient: 'from-slate-800 via-zinc-800 to-neutral-700',
-=======
-    description: '打造国内首款量产碳化硅全彩光波导、全场景 6DoF 的 AI+AR 眼镜，项目投入 5kw 级。',
-    period: '2024.10 - 2025.10',
-    role: '硬件产品经理',
-    gradient: 'from-slate-700 via-zinc-600 to-stone-500',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: Glasses,
     techStack: ['碳化硅光波导', '6DoF SLAM', 'XR 操作系统', '3D 手势', '双目 SLAM', '分体双芯'],
     achievements: [
@@ -395,7 +306,6 @@ export const projects = [
       },
     ],
   },
-<<<<<<< HEAD
   {
     id: 3,
     slug: 'zhuimi-ai-wearable',
@@ -616,8 +526,6 @@ export const projects = [
       ]},
     ],
   },
-=======
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
 ]
 
 // ============ 技能 ============
@@ -625,66 +533,42 @@ export const skills = [
   {
     id: 1,
     title: '智能硬件产品设计',
-<<<<<<< HEAD
     description: '覆盖智能穿戴、AR 眼镜、IoT 设备的完整产品生命周期：从硬件选型、产品定义到量产落地与持续迭代',
-=======
-    description: '智能穿戴、AR眼镜、IoT设备的硬件选型、产品定义与全生命周期管理',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: Cpu,
     level: 95,
   },
   {
     id: 2,
     title: '操作系统 & 交互设计',
-<<<<<<< HEAD
     description: '具备 XR 操作系统架构设计、AI 语音交互、手势识别与多模态交互规范的系统性方法论',
-=======
-    description: 'XR 操作系统架构、AI 语音交互、手势识别、多模态交互规范设计',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: Brain,
     level: 90,
   },
   {
     id: 3,
     title: '跨端产品管理',
-<<<<<<< HEAD
     description: '主导 App / Web / 小程序 / Station 等多端产品设计与研发协同，具备跨终端统一用户体验设计经验',
-=======
-    description: 'APP / Web / 小程序 / Station 多端产品设计与协同开发',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: AppIcon,
     level: 92,
   },
   {
     id: 4,
     title: 'AI & 视觉算法应用',
-<<<<<<< HEAD
     description: '深度理解 SLAM、3D 重建、手势追踪等空间计算算法，具备需求定义、数据采集规范与验收标准的完整经验',
-=======
-    description: 'SLAM 定位、3D 重建、手势追踪等算法的需求定义与验收标准制定',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: Camera,
     level: 85,
   },
   {
     id: 5,
     title: 'AIGC & Vibcoding',
-<<<<<<< HEAD
     description: '熟练运用 AIGC 工具链进行产品原型快速搭建，具备 Web / Android / Unity 多平台 Vibcoding 实战能力',
-=======
-    description: '精通 AI 辅助开发，通过自然语言驱动复杂产品原型的快速搭建',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: Zap,
     level: 88,
   },
   {
     id: 6,
     title: '数据驱动决策',
-<<<<<<< HEAD
     description: '以 SQL、数据埋点、A/B 实验为核心的量化分析方法，通过用户行为洞察驱动产品决策与增长策略',
-=======
-    description: 'SQL、数据埋点、A/B 实验、用户行为分析与产品增长策略',
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     icon: BarChart3,
     level: 87,
   },

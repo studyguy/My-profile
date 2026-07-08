@@ -11,16 +11,12 @@ export default function Navbar() {
   const location = useLocation()
 
   useEffect(() => {
-<<<<<<< HEAD
     const handleScroll = () => {
       const scrollBottom = window.innerHeight + window.scrollY
       const nearBottom = scrollBottom >= document.documentElement.scrollHeight - 100
       const pastHero = window.scrollY > window.innerHeight * 0.7
       setScrolled(pastHero && !nearBottom)
     }
-=======
-    const handleScroll = () => setScrolled(window.scrollY > 50)
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -57,17 +53,10 @@ export default function Navbar() {
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-<<<<<<< HEAD
         className={`fixed top-0 inset-x-0 z-50 border-b transition-colors duration-700 ${
           scrolled
             ? 'bg-zinc-950/70 backdrop-blur-xl border-white/[0.06]'
             : 'bg-transparent border-transparent'
-=======
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'bg-zinc-950/70 backdrop-blur-xl border-b border-white/[0.06]'
-            : 'bg-transparent'
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
@@ -77,11 +66,7 @@ export default function Navbar() {
               onClick={goHome}
               className="text-lg font-bold tracking-tight text-zinc-100 hover:text-teal-400 transition-colors"
             >
-<<<<<<< HEAD
               RODGER<span className="text-teal-400">.</span>
-=======
-              YRJ<span className="text-teal-400">.</span>
->>>>>>> c3afca1 (Initial commit: 杨镕键个人作品集网站)
             </button>
 
             {/* Desktop Links */}
