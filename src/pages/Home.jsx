@@ -1,10 +1,10 @@
 import { Suspense } from 'react'
 import Hero from '../components/Hero'
+import About from '../components/About'
 import SectionWrapper from '../components/SectionWrapper'
 import ExperienceTimeline from '../components/ExperienceTimeline'
 import FeaturedProjects from '../components/FeaturedProjects'
 import SkillsStrengths from '../components/SkillsStrengths'
-import Education from '../components/Education'
 
 function Loading() {
   return (
@@ -20,10 +20,14 @@ export default function Home() {
       <Hero />
 
       <Suspense fallback={<Loading />}>
+        <About />
+      </Suspense>
+
+      <Suspense fallback={<Loading />}>
         <SectionWrapper
           id="experience"
           title="职业经历"
-          subtitle="8年+智能硬件产品经验，从 IoT 平台到 AR 眼镜，从无人机到智能穿戴"
+          subtitle="从 IoT 平台到 AR 眼镜，从无人机到智能穿戴 - 8 年跨领域产品实践"
         >
           <ExperienceTimeline />
         </SectionWrapper>
@@ -32,8 +36,8 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <SectionWrapper
           id="projects"
-          title="精选项目"
-          subtitle="从 0 到 1，从想法到落地 —— 有代表性的作品"
+          title="项目经历"
+          subtitle="覆盖 SaaS、AI、智能硬件等领域，从概念到落地的代表性作品"
         >
           <FeaturedProjects />
         </SectionWrapper>
@@ -47,10 +51,6 @@ export default function Home() {
         >
           <SkillsStrengths />
         </SectionWrapper>
-      </Suspense>
-
-      <Suspense fallback={<Loading />}>
-        <Education />
       </Suspense>
     </main>
   )

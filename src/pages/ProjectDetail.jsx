@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Calendar, Wrench, Award, ChevronLeft, ChevronRight } from 'lucide-react'
@@ -9,11 +9,18 @@ import DetailImagePlaceholder from '../components/DetailImagePlaceholder'
 export default function ProjectDetail() {
   const { slug } = useParams()
   const navigate = useNavigate()
+  const [scrolled, setScrolled] = useState(false)
   const project = projects.find(p => p.slug === slug)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [slug])
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   if (!project) {
     return (
@@ -34,18 +41,28 @@ export default function ProjectDetail() {
   const Icon = project.icon
 
   return (
-    <div className="min-h-screen bg-zinc-950">
+    <div className="min-h-screen">
       {/* Top Bar */}
-      <div className="sticky top-0 z-40 glass-strong border-b border-white/[0.06]">
+      <div
+        className={`sticky top-0 z-40 border-b transition-colors duration-700 ${
+          scrolled
+            ? 'bg-zinc-950/70 backdrop-blur-xl border-white/[0.06]'
+            : 'bg-transparent border-transparent'
+        }`}
+      >
         <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
           <button
             onClick={() => navigate('/')}
-            className="flex items-center gap-2 text-zinc-400 hover:text-zinc-100 transition-colors text-sm"
+            className={`flex items-center gap-2 transition-colors text-sm ${
+              scrolled ? 'text-zinc-400 hover:text-zinc-100' : 'text-zinc-300 hover:text-zinc-100'
+            }`}
           >
             <ArrowLeft size={16} />
             返回首页
           </button>
-          <span className="text-xs text-zinc-600 truncate max-w-[200px]">{project.title}</span>
+          <span className={`text-xs transition-colors duration-700 truncate max-w-[200px] ${
+            scrolled ? 'text-zinc-600' : 'text-zinc-500'
+          }`}>{project.title}</span>
         </div>
       </div>
 
@@ -62,7 +79,7 @@ export default function ProjectDetail() {
             <span className="px-3 py-1 rounded-full bg-teal-400/10 text-teal-400 text-xs font-medium">
               {project.category}
             </span>
-            <div className="flex items-center gap-1.5 text-zinc-500 text-xs">
+            <div className="flex items-center gap-1.5 text-zinc-200 text-xs">
               <Calendar size={12} />
               {project.period}
             </div>
@@ -170,7 +187,7 @@ export default function ProjectDetail() {
               {project.achievements.map((ach, i) => (
                 <div key={i} className="glass rounded-xl p-5">
                   <p className="text-2xl font-bold text-zinc-100 mb-1">{ach.value}</p>
-                  <p className="text-xs text-zinc-500">{ach.label}</p>
+                  <p className="text-xs text-zinc-300">{ach.label}</p>
                 </div>
               ))}
             </div>
@@ -206,11 +223,11 @@ export default function ProjectDetail() {
           {prevProj ? (
             <Link
               to={`/project/${prevProj.slug}`}
-              className="flex items-center gap-2 text-sm text-zinc-500 hover:text-teal-400 transition-colors group"
+              className="flex items-center gap-2 text-sm text-zinc-400 hover:text-teal-400 transition-colors group"
             >
               <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
               <div className="text-left">
-                <span className="block text-xs text-zinc-600">{prevProj.category}</span>
+                <span className="block text-xs text-zinc-500">{prevProj.category}</span>
                 <span>{prevProj.title}</span>
               </div>
             </Link>
@@ -219,7 +236,7 @@ export default function ProjectDetail() {
           {nextProj ? (
             <Link
               to={`/project/${nextProj.slug}`}
-              className="flex items-center gap-2 text-sm text-zinc-500 hover:text-teal-400 transition-colors group"
+              className="flex items-center gap-2 text-sm text-zinc-400 hover:text-teal-400 transition-colors group"
             >
               <div className="text-right">
                 <span className="block text-xs text-zinc-600">{nextProj.category}</span>
