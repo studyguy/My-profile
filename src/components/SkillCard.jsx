@@ -1,10 +1,46 @@
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
 
 export default function SkillCard({ skill, index }) {
   const { title, description, icon: Icon, level } = skill
+  const [displayLevel, setDisplayLevel] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-60px' })
+
+  useEffect(() => {
+    if (!isInView) return
+
+    const delay = (0.3 + index * 0.1) * 1000
+    let animationId
+
+    const timeoutId = setTimeout(() => {
+      const startTime = performance.now()
+      const duration = 1000
+
+      function animate(currentTime) {
+        const elapsed = currentTime - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        const eased = 1 - Math.pow(1 - progress, 2)
+
+        setDisplayLevel(Math.round(eased * level))
+
+        if (progress < 1) {
+          animationId = requestAnimationFrame(animate)
+        }
+      }
+
+      animationId = requestAnimationFrame(animate)
+    }, delay)
+
+    return () => {
+      clearTimeout(timeoutId)
+      if (animationId) cancelAnimationFrame(animationId)
+    }
+  }, [isInView, level, index])
 
   return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 30, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -40,7 +76,7 @@ export default function SkillCard({ skill, index }) {
 
         {/* Percentage */}
         <div className="flex justify-end mt-2">
-          <span className="text-xs text-zinc-600 font-mono">{level}%</span>
+          <span className="text-xs text-zinc-600 font-mono">{displayLevel}%</span>
         </div>
       </div>
     </motion.div>

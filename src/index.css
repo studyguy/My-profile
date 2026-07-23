@@ -36,6 +36,25 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  :root {
+    --color-primary: #2dd4bf;       /* teal-400 */
+    --color-primary-light: #5eead4; /* teal-300 */
+    --color-accent: #a78bfa;        /* violet-400 */
+    --color-bg: #09090b;            /* zinc-950 */
+    --color-surface: #18181b;       /* zinc-900 */
+    --color-border: rgba(255, 255, 255, 0.06);
+    --color-text-primary: #f4f4f5;  /* zinc-100 */
+    --color-text-secondary: #a1a1aa;/* zinc-400 */
+    --color-text-muted: #71717a;    /* zinc-500 */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --transition-fast: 150ms;
+    --transition-normal: 300ms;
+    --transition-slow: 500ms;
+  }
 }
 
 /* ========== Components ========== */

@@ -1,5 +1,6 @@
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Briefcase, Sparkles, Code, Monitor, Layers, Cpu } from 'lucide-react'
+import { Briefcase, Sparkles, Monitor, Layers, Cpu } from 'lucide-react'
 import SectionWrapper from './SectionWrapper'
 
 const professionalTags = [
@@ -17,6 +18,16 @@ const personalTags = [
 ]
 
 export default function About() {
+  const [isDesktop, setIsDesktop] = useState(true)
+
+  useEffect(() => {
+    const mql = window.matchMedia('(min-width: 1024px)')
+    setIsDesktop(mql.matches)
+    const handler = (e) => setIsDesktop(e.matches)
+    mql.addEventListener('change', handler)
+    return () => mql.removeEventListener('change', handler)
+  }, [])
+
   return (
     <SectionWrapper
       id="about"
@@ -26,10 +37,10 @@ export default function About() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
         {/* Professional Card */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={isDesktop ? { opacity: 0, x: -30 } : { opacity: 0, y: 30 }}
+          whileInView={isDesktop ? { opacity: 1, x: 0 } : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6, delay: isDesktop ? 0 : 0, ease: 'easeOut' }}
           className="glass rounded-2xl p-6 md:p-8"
         >
           <div className="flex items-center gap-3 mb-6">
@@ -59,10 +70,10 @@ export default function About() {
 
         {/* Personal Card */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={isDesktop ? { opacity: 0, x: 30 } : { opacity: 0, y: 30 }}
+          whileInView={isDesktop ? { opacity: 1, x: 0 } : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+          transition={{ duration: 0.6, delay: isDesktop ? 0.1 : 0.15, ease: 'easeOut' }}
           className="glass rounded-2xl p-6 md:p-8"
         >
           <div className="flex items-center gap-3 mb-6">

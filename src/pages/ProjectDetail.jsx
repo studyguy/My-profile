@@ -1,200 +1,103 @@
-import { useEffect, useState } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Calendar, Wrench, Award, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Calendar, Wrench } from 'lucide-react'
 import { projects } from '../data/placeholder'
 import BlurText from '../components/BlurText'
 import DetailImagePlaceholder from '../components/DetailImagePlaceholder'
+import DetailLayout from '../components/DetailLayout'
 
 export default function ProjectDetail() {
   const { slug } = useParams()
-  const navigate = useNavigate()
-  const [scrolled, setScrolled] = useState(false)
   const project = projects.find(p => p.slug === slug)
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [slug])
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  if (!project) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-zinc-950">
-        <div className="text-center">
-          <p className="text-zinc-400 mb-4">未找到该项目</p>
-          <Link to="/" className="text-teal-400 hover:text-teal-300 transition-colors">
-            返回首页
-          </Link>
-        </div>
-      </div>
-    )
-  }
-
-  const currentIndex = projects.findIndex(p => p.slug === slug)
-  const prevProj = currentIndex > 0 ? projects[currentIndex - 1] : null
-  const nextProj = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null
-  const Icon = project.icon
-
   return (
-    <div className="min-h-screen">
-      {/* Top Bar */}
-      <div
-        className={`sticky top-0 z-40 border-b transition-colors duration-700 ${
-          scrolled
-            ? 'bg-zinc-950/70 backdrop-blur-xl border-white/[0.06]'
-            : 'bg-transparent border-transparent'
-        }`}
-      >
-        <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
-          <button
-            onClick={() => navigate('/')}
-            className={`flex items-center gap-2 transition-colors text-sm ${
-              scrolled ? 'text-zinc-400 hover:text-zinc-100' : 'text-zinc-300 hover:text-zinc-100'
-            }`}
-          >
-            <ArrowLeft size={16} />
-            返回首页
-          </button>
-          <span className={`text-xs transition-colors duration-700 truncate max-w-[200px] ${
-            scrolled ? 'text-zinc-600' : 'text-zinc-500'
-          }`}>{project.title}</span>
-        </div>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-6 py-12 md:py-20">
-        {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          {/* Tags + Period */}
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            <span className="px-3 py-1 rounded-full bg-teal-400/10 text-teal-400 text-xs font-medium">
-              {project.category}
-            </span>
-            <div className="flex items-center gap-1.5 text-zinc-200 text-xs">
-              <Calendar size={12} />
-              {project.period}
-            </div>
-            <span className="px-3 py-1 rounded-full bg-violet-400/10 text-violet-400 text-xs font-medium">
-              {project.role}
-            </span>
-          </div>
-
-          {/* Title */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] mb-6">
-            <BlurText
-              text={project.title}
-              delay={40}
-              animateBy="letters"
-              direction="top"
-              stepDuration={0.35}
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15]"
-            />
-          </h1>
-
-          {/* Description */}
-          <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl mb-6">
-            {project.description}
-          </p>
-
-          {/* Tech Stack Tags */}
-          <div className="flex flex-wrap gap-2">
-            {project.techStack.map((tech, i) => (
-              <span
-                key={i}
-                className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.06] text-xs text-zinc-400"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Main Image Placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-14"
-        >
-          <DetailImagePlaceholder
-            label="产品主图预留区域"
-            className="aspect-[16/9]"
-          />
-        </motion.div>
-
-        {/* Detail Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="space-y-10 mb-14"
-        >
-          {project.detailContent.map((section, i) => (
-            <div key={i}>
-              <h3 className="text-lg font-semibold text-teal-400 mb-4 flex items-center gap-2">
-                <span className="w-1 h-4 rounded-full bg-teal-400" />
-                {section.title}
-              </h3>
-              {section.type === 'overview' && (
-                <p className="text-zinc-300 leading-relaxed">{section.content}</p>
-              )}
-              {section.type === 'list' && (
-                <ul className="space-y-3">
-                  {section.items.map((item, j) => (
-                    <li key={j} className="flex gap-3 text-zinc-300 leading-relaxed">
-                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal-400/50 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Secondary Image Placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mb-14 grid grid-cols-1 md:grid-cols-2 gap-4"
-        >
-          <DetailImagePlaceholder label="产品截图预留区" className="aspect-[4/3]" />
-          <DetailImagePlaceholder label="产品截图预留区" className="aspect-[4/3]" />
-        </motion.div>
-
-        {/* Achievements Grid */}
-        {project.achievements.length > 0 && (
+    <DetailLayout
+      item={project}
+      items={projects}
+      basePath="/project/"
+      topBarTitle={project?.title}
+      achievementsTitle="项目亮点"
+      notFoundMessage="未找到该项目"
+      navSubtitle={(item) => item.category}
+      navTitle={(item) => item.title}
+      heroSection={
+        project && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
           >
-            <h3 className="text-lg font-semibold text-teal-400 mb-6 flex items-center gap-2">
-              <Award size={18} />
-              项目亮点
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {project.achievements.map((ach, i) => (
-                <div key={i} className="glass rounded-xl p-5">
-                  <p className="text-2xl font-bold text-zinc-100 mb-1">{ach.value}</p>
-                  <p className="text-xs text-zinc-300">{ach.label}</p>
-                </div>
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="px-3 py-1 rounded-full bg-teal-400/10 text-teal-400 text-xs font-medium">
+                {project.category}
+              </span>
+              <div className="flex items-center gap-1.5 text-zinc-200 text-xs">
+                <Calendar size={12} />
+                {project.period}
+              </div>
+              <span className="px-3 py-1 rounded-full bg-violet-400/10 text-violet-400 text-xs font-medium">
+                {project.role}
+              </span>
+            </div>
+
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] mb-6">
+              <BlurText
+                text={project.title}
+                delay={40}
+                animateBy="letters"
+                direction="top"
+                stepDuration={0.35}
+                className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15]"
+              />
+            </h1>
+
+            <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl mb-6">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {project.techStack.map((tech, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.06] text-xs text-zinc-400"
+                >
+                  {tech}
+                </span>
               ))}
             </div>
           </motion.div>
-        )}
-
-        {/* Tech Stack Section */}
+        )
+      }
+      imageSection={
+        project && (
+          <>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-14"
+            >
+              <DetailImagePlaceholder
+                label="产品主图预留区域"
+                className="aspect-[16/9]"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mb-14 grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
+              <DetailImagePlaceholder label="产品截图预留区" className="aspect-[4/3]" />
+              <DetailImagePlaceholder label="产品截图预留区" className="aspect-[4/3]" />
+            </motion.div>
+          </>
+        )
+      }
+    >
+      {/* Tech Stack Section */}
+      {project && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -217,36 +120,7 @@ export default function ProjectDetail() {
             ))}
           </div>
         </motion.div>
-
-        {/* Navigation Footer */}
-        <div className="mt-20 pt-8 border-t border-white/[0.06] flex items-center justify-between">
-          {prevProj ? (
-            <Link
-              to={`/project/${prevProj.slug}`}
-              className="flex items-center gap-2 text-sm text-zinc-400 hover:text-teal-400 transition-colors group"
-            >
-              <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-              <div className="text-left">
-                <span className="block text-xs text-zinc-500">{prevProj.category}</span>
-                <span>{prevProj.title}</span>
-              </div>
-            </Link>
-          ) : <div />}
-
-          {nextProj ? (
-            <Link
-              to={`/project/${nextProj.slug}`}
-              className="flex items-center gap-2 text-sm text-zinc-400 hover:text-teal-400 transition-colors group"
-            >
-              <div className="text-right">
-                <span className="block text-xs text-zinc-600">{nextProj.category}</span>
-                <span>{nextProj.title}</span>
-              </div>
-              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          ) : <div />}
-        </div>
-      </div>
-    </div>
+      )}
+    </DetailLayout>
   )
 }

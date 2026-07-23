@@ -107,7 +107,7 @@ export default function ContactFooter() {
             className="inline-flex flex-col items-center gap-3 px-8 py-6 rounded-3xl glass card-hover cursor-pointer"
             aria-label="点击放大二维码"
           >
-            <img src="/My-profile/QRcode.png" alt="微信二维码" className="w-32 h-32 rounded-lg" />
+            <img src={import.meta.env.BASE_URL + "QRcode.png"} alt="微信二维码" className="w-32 h-32 rounded-lg" />
             <span className="text-zinc-400 text-sm">扫码添加微信</span>
           </button>
         </motion.div>
@@ -138,9 +138,24 @@ export default function ContactFooter() {
                 >
                   <X size={20} />
                 </button>
-                <img src="/My-profile/QRcode.png" alt="微信二维码" className="w-72 h-72 rounded-2xl" />
+                <img src={import.meta.env.BASE_URL + "QRcode.png"} alt="微信二维码" className="w-72 h-72 rounded-2xl" />
                 <p className="text-center text-zinc-300 mt-4 text-base">扫码添加微信</p>
               </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Copy Toast */}
+        <AnimatePresence>
+          {copied && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.25 }}
+              className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] px-5 py-3 rounded-full glass text-zinc-300 text-sm whitespace-nowrap"
+            >
+              邮箱已复制到剪贴板
             </motion.div>
           )}
         </AnimatePresence>
