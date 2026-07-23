@@ -1,12 +1,13 @@
 import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { Mail, ArrowUp, Copy, Check } from 'lucide-react'
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
+import { Mail, ArrowUp, Copy, Check, X } from 'lucide-react'
 import { useState } from 'react'
 import { personalInfo } from '../data/placeholder'
 
 export default function ContactFooter() {
   const ref = useRef(null)
   const [copied, setCopied] = useState(false)
+  const [qrZoomed, setQrZoomed] = useState(false)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end end'],
@@ -101,11 +102,48 @@ export default function ContactFooter() {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mb-12"
         >
-          <div className="inline-flex flex-col items-center gap-3 px-8 py-6 rounded-full glass">
+          <button
+            onClick={() => setQrZoomed(true)}
+            className="inline-flex flex-col items-center gap-3 px-8 py-6 rounded-3xl glass card-hover cursor-pointer"
+            aria-label="点击放大二维码"
+          >
             <img src="/My-profile/QRcode.png" alt="微信二维码" className="w-32 h-32 rounded-lg" />
             <span className="text-zinc-400 text-sm">扫码添加微信</span>
-          </div>
+          </button>
         </motion.div>
+
+        {/* QR Code Zoom Modal */}
+        <AnimatePresence>
+          {qrZoomed && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setQrZoomed(false)}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm cursor-zoom-out"
+            >
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative bg-zinc-900 rounded-3xl p-8 max-w-sm mx-4 shadow-2xl"
+              >
+                <button
+                  onClick={() => setQrZoomed(false)}
+                  className="absolute top-4 right-4 text-zinc-500 hover:text-zinc-200 transition-colors"
+                  aria-label="关闭"
+                >
+                  <X size={20} />
+                </button>
+                <img src="/My-profile/QRcode.png" alt="微信二维码" className="w-72 h-72 rounded-2xl" />
+                <p className="text-center text-zinc-300 mt-4 text-base">扫码添加微信</p>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Location */}
         <motion.p
