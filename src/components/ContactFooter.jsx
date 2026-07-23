@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Mail, Github, Twitter, Linkedin, ArrowUp, Copy, Check, Phone } from 'lucide-react'
+import { Mail, ArrowUp, Copy, Check } from 'lucide-react'
 import { useState } from 'react'
 import { personalInfo } from '../data/placeholder'
 
@@ -24,11 +24,7 @@ export default function ContactFooter() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const socialLinks = [
-    { icon: Github, href: personalInfo.social.github, label: 'GitHub' },
-    { icon: Twitter, href: personalInfo.social.twitter, label: 'Twitter' },
-    { icon: Linkedin, href: personalInfo.social.linkedin, label: 'LinkedIn' },
-  ]
+
 
   return (
     <motion.footer
@@ -97,7 +93,7 @@ export default function ContactFooter() {
           </button>
         </motion.div>
 
-        {/* Phone */}
+        {/* WeChat QR Code */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -105,32 +101,10 @@ export default function ContactFooter() {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mb-12"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass">
-            <Phone size={18} className="text-teal-400" />
-            <span className="text-zinc-400 text-base">{personalInfo.phone}</span>
+          <div className="inline-flex flex-col items-center gap-3 px-8 py-6 rounded-full glass">
+            <img src="/My-profile/QRcode.png" alt="微信二维码" className="w-32 h-32 rounded-lg" />
+            <span className="text-zinc-400 text-sm">扫码添加微信</span>
           </div>
-        </motion.div>
-
-        {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex items-center justify-center gap-4 mb-16"
-        >
-          {socialLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full glass flex items-center justify-center card-hover text-zinc-400 hover:text-teal-400 transition-colors"
-              aria-label={link.label}
-            >
-              <link.icon size={20} />
-            </a>
-          ))}
         </motion.div>
 
         {/* Location */}

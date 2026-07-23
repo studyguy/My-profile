@@ -12,13 +12,7 @@ export const personalInfo = {
   title: '智能硬件 x AI 产品经理',
   subtitle: '8年+跨端产品经验，深耕智能穿戴、AR 眼镜、AI Agent 及操作系统，擅长将前沿技术转化为可规模化的产品方案',
   email: 'master_yrj@163.com',
-  phone: '15397581616',
   location: '中国 · 杭州',
-  social: {
-    github: 'https://github.com',
-    twitter: 'https://twitter.com',
-    linkedin: 'https://linkedin.com',
-  },
 }
 
 // ============ 导航链接 ============
