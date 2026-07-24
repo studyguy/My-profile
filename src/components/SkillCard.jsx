@@ -76,7 +76,7 @@ export default function SkillCard({ skill, index }) {
 
         {/* Percentage */}
         <div className="flex justify-end mt-2">
-          <span className="text-xs text-zinc-600 font-mono">{displayLevel}%</span>
+          <span className="text-xs text-zinc-400 font-mono">{displayLevel}%</span>
         </div>
       </div>
     </motion.div>

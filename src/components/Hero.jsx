@@ -93,7 +93,7 @@ export default function Hero() {
         >
           <button
             onClick={scrollToContact}
-            className="group w-40 inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/10 text-zinc-300 font-semibold text-base hover:border-white/20 hover:text-zinc-100 transition-all duration-300"
+            className="group w-40 inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-teal-400 text-zinc-900 font-semibold text-base hover:bg-teal-500 hover:text-zinc-900 transition-all duration-300"
           >
             联系我
           </button>

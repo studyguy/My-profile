@@ -166,7 +166,7 @@ export default function ContactFooter() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-zinc-600 text-sm mb-8"
+          className="text-zinc-400 text-sm mb-8"
         >
           {personalInfo.location}
         </motion.p>
@@ -178,7 +178,7 @@ export default function ContactFooter() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.7 }}
           onClick={scrollToTop}
-          className="inline-flex items-center gap-2 text-zinc-600 hover:text-teal-400 transition-colors text-sm"
+          className="inline-flex items-center gap-2 text-zinc-400 hover:text-teal-400 transition-colors text-sm"
         >
           <ArrowUp size={16} />
           回到顶部
@@ -190,7 +190,7 @@ export default function ContactFooter() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-zinc-700 text-xs mt-20"
+          className="text-zinc-400 text-xs mt-20"
         >
           &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
         </motion.p>

@@ -274,7 +274,7 @@ export const projects = [
     description: '主导国内首款碳化硅全彩光波导 AR 眼镜的产品定义与硬件选型，实现全场景 6DoF 精准定位。',
     period: '2024.10 - 2025.10',
     role: '硬件产品经理',
-    gradient: 'from-slate-800 via-zinc-800 to-neutral-700',
+    gradient: 'from-violet-900 via-zinc-800 to-neutral-800',
     icon: Glasses,
     techStack: ['碳化硅光波导', '6DoF SLAM', 'XR 操作系统', '3D 手势', '双目 SLAM', '分体双芯'],
     achievements: [
@@ -308,7 +308,7 @@ export const projects = [
     description: '统筹多品类智能穿戴的 AI 能力矩阵，制定规则引擎-ML-大模型三层演进路线，将 AI 转化为可感知的差异化优势。',
     period: '2025.12 - 至今',
     role: '负责人',
-    gradient: 'from-blue-900 via-zinc-800 to-neutral-800',
+    gradient: 'from-emerald-900 via-zinc-800 to-neutral-700',
     icon: Brain,
     techStack: ['大模型接入', '语音交互', '运动识别', '健康监测', '商业化闭环'],
     achievements: [
@@ -333,7 +333,7 @@ export const projects = [
     description: '从 0 到 1 定义并落地眼镜端 AI 助手果宝，构建意图识别-任务规划-工具调用的完整 Agent 交互闭环。',
     period: '2024.10 - 2025.10',
     role: '产品经理',
-    gradient: 'from-violet-900 via-zinc-800 to-neutral-800',
+    gradient: 'from-teal-900 via-zinc-800 to-neutral-800',
     icon: MessageSquare,
     techStack: ['AI Agent', '意图识别', '多模态输入', '大模型对接', '用户反馈闭环'],
     achievements: [
@@ -358,7 +358,7 @@ export const projects = [
     description: '设计以 AI 为底层驱动的 AR 眼镜操作系统，打通手机/眼镜双端数据，实现跨设备主动式智能服务。',
     period: '2024.10 - 2025.10',
     role: '产品经理',
-    gradient: 'from-emerald-900 via-zinc-800 to-neutral-700',
+    gradient: 'from-violet-900 via-zinc-800 to-neutral-800',
     icon: Monitor,
     techStack: ['场景化AI', '双端协同', '系统级AI接口', '主动式服务'],
     achievements: [
@@ -383,7 +383,7 @@ export const projects = [
     description: '主导自研 AR 眼镜的产品策略与硬件设计，以离轴反射方案实现 72 度大 FOV 全彩显示与高精度定位。',
     period: '2022.10 - 2024.09',
     role: '负责人',
-    gradient: 'from-orange-900 via-zinc-800 to-neutral-800',
+    gradient: 'from-emerald-900 via-zinc-800 to-neutral-700',
     icon: Glasses,
     techStack: ['大FOV全彩', '芯片选型', 'SLAM算法', '量产交付'],
     achievements: [
@@ -408,7 +408,7 @@ export const projects = [
     description: '搭建 XR 开发者创作平台与社区体系，以零代码工具降低创作门槛，吸引 1500+ 开发者，驱动内容生态繁荣。',
     period: '2022.10 - 2024.10',
     role: '负责人',
-    gradient: 'from-amber-900 via-zinc-800 to-neutral-700',
+    gradient: 'from-teal-900 via-zinc-800 to-neutral-800',
     icon: Users,
     techStack: ['创作工具链', 'Unity SDK', '社群运营', 'Kickstarter', '商业生态'],
     achievements: [
@@ -432,7 +432,7 @@ export const projects = [
     description: '主导 2D/3D 数字人产品设计与模块化拆解，建立 100+ 参数资产规范，以 SAAS + 私有云模式完成政务标杆落地。',
     period: '2023.01 - 2023.06',
     role: '产品经理',
-    gradient: 'from-rose-900 via-zinc-800 to-neutral-800',
+    gradient: 'from-violet-900 via-zinc-800 to-neutral-800',
     icon: Bot,
     techStack: ['数字人', 'SAAS', '私有云', '资产规范', '政务'],
     achievements: [
@@ -456,7 +456,7 @@ export const projects = [
     description: '利用自研 AR 眼镜的 6DoF 手势识别特性，设计并交付强节奏手势交互音游，已在线下门店上线运营。',
     period: '2023.06 - 2023.09',
     role: '游戏制作人',
-    gradient: 'from-indigo-900 via-zinc-800 to-neutral-700',
+    gradient: 'from-emerald-900 via-zinc-800 to-neutral-700',
     icon: Music,
     techStack: ['AR游戏', '手势交互', '线下运营', '服务器', '结算系统'],
     achievements: [
@@ -480,7 +480,7 @@ export const projects = [
     description: '基于大疆无人机 SDK 设计自动化测绘方案，将土方测量精度提升 5 倍、效率提升 20 倍，达到厘米级精度。',
     period: '2019.05 - 2020.01',
     role: '产品经理',
-    gradient: 'from-cyan-900 via-zinc-800 to-neutral-800',
+    gradient: 'from-teal-900 via-zinc-800 to-neutral-800',
     icon: Plane,
     techStack: ['DJI SDK', 'RTK定位', '三维重建', '自动化飞控', 'Web报告系统'],
     achievements: [
@@ -504,7 +504,7 @@ export const projects = [
     description: '构建智能家电 App 数字化产线，以模块化面板 + 多语言体系实现多端覆盖与 12 国语言热更新，赋能 5 万+品牌商。',
     period: '2018.02 - 2020.01',
     role: '产品经理',
-    gradient: 'from-sky-900 via-zinc-800 to-neutral-700',
+    gradient: 'from-violet-900 via-zinc-800 to-neutral-800',
     icon: Smartphone,
     techStack: ['SDK开放平台', 'OEM流水线', '模块化面板', '多语言系统', '跨端覆盖'],
     achievements: [

@@ -57,7 +57,7 @@ export default function DetailLayout({
             : 'bg-transparent border-transparent'
         }`}
       >
-        <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
           <button
             onClick={() => navigate('/')}
             className={`flex items-center gap-2 transition-colors text-sm ${
@@ -68,7 +68,7 @@ export default function DetailLayout({
             返回首页
           </button>
           <span className={`text-xs transition-colors duration-700 truncate max-w-[200px] ${
-            scrolled ? 'text-zinc-600' : 'text-zinc-500'
+            scrolled ? 'text-zinc-400' : 'text-zinc-500'
           }`}>{topBarTitle}</span>
         </div>
       </div>
@@ -144,7 +144,7 @@ export default function DetailLayout({
             >
               <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
               <div className="text-left">
-                <span className="block text-xs text-zinc-500">{navSubtitle(prevItem)}</span>
+                <span className="block text-xs text-zinc-400">{navSubtitle(prevItem)}</span>
                 <span>{navTitle(prevItem)}</span>
               </div>
             </Link>
@@ -156,7 +156,7 @@ export default function DetailLayout({
               className="flex items-center gap-2 text-sm text-zinc-400 hover:text-teal-400 transition-colors group"
             >
               <div className="text-right">
-                <span className="block text-xs text-zinc-600">{navSubtitle(nextItem)}</span>
+                <span className="block text-xs text-zinc-400">{navSubtitle(nextItem)}</span>
                 <span>{navTitle(nextItem)}</span>
               </div>
               <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />

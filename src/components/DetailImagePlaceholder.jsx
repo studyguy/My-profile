@@ -22,7 +22,7 @@ export default function DetailImagePlaceholder({ src, label = '产品截图预�
               <div className="w-14 h-14 rounded-2xl bg-white/[0.04] flex items-center justify-center">
                 <Image size={24} className="text-zinc-600" />
               </div>
-              <span className="text-xs text-zinc-600 tracking-wider">{label}</span>
+              <span className="text-xs text-zinc-400 tracking-wider">{label}</span>
             </div>
           )}
 
@@ -47,7 +47,7 @@ export default function DetailImagePlaceholder({ src, label = '产品截图预�
           <div className="w-14 h-14 rounded-2xl bg-white/[0.04] flex items-center justify-center">
             <Image size={24} className="text-zinc-600" />
           </div>
-          <span className="text-xs text-zinc-600 tracking-wider">{label}</span>
+          <span className="text-xs text-zinc-400 tracking-wider">{label}</span>
         </div>
       )}
 
